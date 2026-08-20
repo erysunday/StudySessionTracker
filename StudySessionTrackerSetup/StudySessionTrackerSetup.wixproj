@@ -1,0 +1,7 @@
+﻿<Project Sdk="WixToolset.Sdk/5.0.2">
+  <ItemGroup>
+    <ProjectReference Include="..\StudySessionCore\StudySessionCore.csproj" />
+    <ProjectReference Include="..\StudySessionTracker\StudySessionTracker.csproj" />
+    <ProjectReference Include="..\StudyStatistics\StudyStatistics.csproj" />
+  </ItemGroup>
+</Project>

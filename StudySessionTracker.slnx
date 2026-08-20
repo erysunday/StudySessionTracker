@@ -1,0 +1,14 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="StudySessionCore/StudySessionCore.csproj" Id="dfc0b015-de3b-486d-b2ce-ba207463838d" />
+  <Project Path="StudySessionTracker/StudySessionTracker.csproj" />
+  <Project Path="StudySessionTrackerSetup/StudySessionTrackerSetup.wixproj" Type="b7dd6f7e-def8-4e67-b5b7-07ef123db6f0" Id="d961e771-616a-40d4-ae53-4fbd1bb479ff">
+    <Platform Solution="*|Any CPU" Project="x64" />
+  </Project>
+  <Project Path="StudyStatistics/StudyStatistics.csproj" Id="7b6cf570-c91a-4978-aa63-6761448a8c93" />
+</Solution>

@@ -1,0 +1,65 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+	<Package 
+		Name="StudySessionTracker" 
+		Manufacturer="erysunday" 
+		Version="2.0.0.0" 
+		UpgradeCode="B8CA84C0-861F-4E00-AA76-FA230547486E">
+		
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+		<Feature Id="ProductFeature" Title="StudySessionTrackerSetup">
+			<ComponentRef Id="MainExecutable" />
+			<ComponentRef Id="StudySessionCoreDLL" />
+			<ComponentRef Id="StudyStatisticsDLL"/>
+		</Feature>
+	</Package>
+
+	<Fragment>
+		<StandardDirectory Id="ProgramFiles6432Folder">
+			<Directory 
+				Id="INSTALLFOLDER" 
+				Name="StudySessionTracker" />
+		</StandardDirectory>
+	</Fragment>
+	
+	<Fragment>
+			<Component 
+				Id="MainExecutable" 
+				Guid="8ADF541A-000F-49A5-9A5D-39199CED7CAF" 
+				Directory="INSTALLFOLDER">
+				<File 
+					Id="StudySessionTrackerEXE" 
+					Source="StudySessionTracker.exe" 
+					KeyPath="yes" />
+				<File 
+					Id="StudySessionTrackerDLL"
+					Source="StudySessionTracker.dll" />
+				<File 
+					Id="StudySessionTrackerDeps"
+					Source="StudySessionTracker.deps.json" />
+				<File
+					Id="StudySessionTrackerRuntimeConfig"
+					Source="StudySessionTracker.runtimeconfig.json" />
+			</Component>
+
+			<Component 
+				Id="StudySessionCoreDLL"
+				Guid="{3D19C578-9162-4AB2-ADA2-2CC270D2B6FC}"
+				Directory="INSTALLFOLDER">
+				<File
+					Id="StudySessionCoreFile"
+					Source="StudySessionCore.dll"
+					KeyPath="yes" />
+			</Component>
+		
+			<Component 
+				Id="StudyStatisticsDLL"
+				Guid="{D12F9325-09FF-4585-AE74-6132B2941A5A}"
+				Directory="INSTALLFOLDER">
+				<File 
+					Id="StudyStatisticsFile"
+					Source="StudyStatistics.dll"
+					KeyPath="yes" />
+			</Component>
+	</Fragment>
+</Wix>
